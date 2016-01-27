@@ -1,6 +1,6 @@
 if($host.Name -ne "ConsoleHost")
 {
-    Start-Process powershell -ArgumentList '-noprofile -noexit -command iex (New-Object Net.WebClient).DownloadString(''http://bit.ly/e0Mw9w'')'
+    Start-Process powershell -ArgumentList @("-noprofile -noexit -file " + $MyInvocation.MyCommand.Definition) 
     return
 }
 
